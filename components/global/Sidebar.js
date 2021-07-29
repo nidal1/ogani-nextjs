@@ -5,7 +5,7 @@ const Sidebar = ({value="customAlt"}) => {
             <div className="humberger__menu__overlay" />
             <div className="humberger__menu__wrapper">
                 <div className="humberger__menu__logo">
-                    <a href="#"><img src="./img/logo.png" alt={value.toString()}/></a>
+                    <a href="#"><img src="/img/logo.png" alt={value.toString()}/></a>
                 </div>
                 <div className="humberger__menu__cart">
                     <ul>
@@ -16,7 +16,7 @@ const Sidebar = ({value="customAlt"}) => {
                 </div>
                 <div className="humberger__menu__widget">
                     <div className="header__top__right__language">
-                        <img src="./img/language.png" alt={value.toString()}/>
+                        <img src="/img/language.png" alt={value.toString()}/>
                         <div>English</div>
                         <span className="arrow_carrot-down" />
                         <ul>

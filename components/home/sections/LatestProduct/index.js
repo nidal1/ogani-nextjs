@@ -30,7 +30,7 @@ const LatestProduct = ({value="customAlt"}) => {
                                     <div className="latest-prdouct__slider__item">
                                         <a href="#" className="latest-product__item">
                                             <div className="latest-product__item__pic">
-                                                <img src="./img/latest-product/lp-1.jpg" alt={value.toString()} />
+                                                <img src="/img/latest-product/lp-1.jpg" alt={value.toString()} />
                                             </div>
                                             <div className="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>
@@ -39,7 +39,7 @@ const LatestProduct = ({value="customAlt"}) => {
                                         </a>
                                         <a href="#" className="latest-product__item">
                                             <div className="latest-product__item__pic">
-                                                <img src="./img/latest-product/lp-2.jpg" alt={value.toString()} />
+                                                <img src="/img/latest-product/lp-2.jpg" alt={value.toString()} />
                                             </div>
                                             <div className="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>
@@ -48,7 +48,7 @@ const LatestProduct = ({value="customAlt"}) => {
                                         </a>
                                         <a href="#" className="latest-product__item">
                                             <div className="latest-product__item__pic">
-                                                <img src="./img/latest-product/lp-3.jpg" alt={value.toString()} />
+                                                <img src="/img/latest-product/lp-3.jpg" alt={value.toString()} />
                                             </div>
                                             <div className="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>
@@ -59,7 +59,7 @@ const LatestProduct = ({value="customAlt"}) => {
                                     <div className="latest-prdouct__slider__item">
                                         <a href="#" className="latest-product__item">
                                             <div className="latest-product__item__pic">
-                                                <img src="./img/latest-product/lp-1.jpg" alt={value.toString()} />
+                                                <img src="/img/latest-product/lp-1.jpg" alt={value.toString()} />
                                             </div>
                                             <div className="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>
@@ -68,7 +68,7 @@ const LatestProduct = ({value="customAlt"}) => {
                                         </a>
                                         <a href="#" className="latest-product__item">
                                             <div className="latest-product__item__pic">
-                                                <img src="./img/latest-product/lp-2.jpg" alt={value.toString()} />
+                                                <img src="/img/latest-product/lp-2.jpg" alt={value.toString()} />
                                             </div>
                                             <div className="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>
@@ -77,7 +77,7 @@ const LatestProduct = ({value="customAlt"}) => {
                                         </a>
                                         <a href="#" className="latest-product__item">
                                             <div className="latest-product__item__pic">
-                                                <img src="./img/latest-product/lp-3.jpg" alt={value.toString()} />
+                                                <img src="/img/latest-product/lp-3.jpg" alt={value.toString()} />
                                             </div>
                                             <div className="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>
@@ -95,7 +95,7 @@ const LatestProduct = ({value="customAlt"}) => {
                                     <div className="latest-prdouct__slider__item">
                                         <a href="#" className="latest-product__item">
                                             <div className="latest-product__item__pic">
-                                                <img src="./img/latest-product/lp-1.jpg" alt={value.toString()} />
+                                                <img src="/img/latest-product/lp-1.jpg" alt={value.toString()} />
                                             </div>
                                             <div className="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>
@@ -104,7 +104,7 @@ const LatestProduct = ({value="customAlt"}) => {
                                         </a>
                                         <a href="#" className="latest-product__item">
                                             <div className="latest-product__item__pic">
-                                                <img src="./img/latest-product/lp-2.jpg" alt={value.toString()} />
+                                                <img src="/img/latest-product/lp-2.jpg" alt={value.toString()} />
                                             </div>
                                             <div className="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>
@@ -113,7 +113,7 @@ const LatestProduct = ({value="customAlt"}) => {
                                         </a>
                                         <a href="#" className="latest-product__item">
                                             <div className="latest-product__item__pic">
-                                                <img src="./img/latest-product/lp-3.jpg" alt={value.toString()} />
+                                                <img src="/img/latest-product/lp-3.jpg" alt={value.toString()} />
                                             </div>
                                             <div className="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>
@@ -124,7 +124,7 @@ const LatestProduct = ({value="customAlt"}) => {
                                     <div className="latest-prdouct__slider__item">
                                         <a href="#" className="latest-product__item">
                                             <div className="latest-product__item__pic">
-                                                <img src="./img/latest-product/lp-1.jpg" alt={value.toString()} />
+                                                <img src="/img/latest-product/lp-1.jpg" alt={value.toString()} />
                                             </div>
                                             <div className="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>
@@ -133,7 +133,7 @@ const LatestProduct = ({value="customAlt"}) => {
                                         </a>
                                         <a href="#" className="latest-product__item">
                                             <div className="latest-product__item__pic">
-                                                <img src="./img/latest-product/lp-2.jpg" alt={value.toString()} />
+                                                <img src="/img/latest-product/lp-2.jpg" alt={value.toString()} />
                                             </div>
                                             <div className="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>
@@ -142,7 +142,7 @@ const LatestProduct = ({value="customAlt"}) => {
                                         </a>
                                         <a href="#" className="latest-product__item">
                                             <div className="latest-product__item__pic">
-                                                <img src="./img/latest-product/lp-3.jpg" alt={value.toString()} />
+                                                <img src="/img/latest-product/lp-3.jpg" alt={value.toString()} />
                                             </div>
                                             <div className="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>
@@ -160,7 +160,7 @@ const LatestProduct = ({value="customAlt"}) => {
                                     <div className="latest-prdouct__slider__item">
                                         <a href="#" className="latest-product__item">
                                             <div className="latest-product__item__pic">
-                                                <img src="./img/latest-product/lp-1.jpg" alt={value.toString()} />
+                                                <img src="/img/latest-product/lp-1.jpg" alt={value.toString()} />
                                             </div>
                                             <div className="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>
@@ -169,7 +169,7 @@ const LatestProduct = ({value="customAlt"}) => {
                                         </a>
                                         <a href="#" className="latest-product__item">
                                             <div className="latest-product__item__pic">
-                                                <img src="./img/latest-product/lp-2.jpg" alt={value.toString()} />
+                                                <img src="/img/latest-product/lp-2.jpg" alt={value.toString()} />
                                             </div>
                                             <div className="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>
@@ -178,7 +178,7 @@ const LatestProduct = ({value="customAlt"}) => {
                                         </a>
                                         <a href="#" className="latest-product__item">
                                             <div className="latest-product__item__pic">
-                                                <img src="./img/latest-product/lp-3.jpg" alt={value.toString()} />
+                                                <img src="/img/latest-product/lp-3.jpg" alt={value.toString()} />
                                             </div>
                                             <div className="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>
@@ -189,7 +189,7 @@ const LatestProduct = ({value="customAlt"}) => {
                                     <div className="latest-prdouct__slider__item">
                                         <a href="#" className="latest-product__item">
                                             <div className="latest-product__item__pic">
-                                                <img src="./img/latest-product/lp-1.jpg" alt={value.toString()} />
+                                                <img src="/img/latest-product/lp-1.jpg" alt={value.toString()} />
                                             </div>
                                             <div className="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>
@@ -198,7 +198,7 @@ const LatestProduct = ({value="customAlt"}) => {
                                         </a>
                                         <a href="#" className="latest-product__item">
                                             <div className="latest-product__item__pic">
-                                                <img src="./img/latest-product/lp-2.jpg" alt={value.toString()} />
+                                                <img src="/img/latest-product/lp-2.jpg" alt={value.toString()} />
                                             </div>
                                             <div className="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>
@@ -207,7 +207,7 @@ const LatestProduct = ({value="customAlt"}) => {
                                         </a>
                                         <a href="#" className="latest-product__item">
                                             <div className="latest-product__item__pic">
-                                                <img src="./img/latest-product/lp-3.jpg" alt={value.toString()} />
+                                                <img src="/img/latest-product/lp-3.jpg" alt={value.toString()} />
                                             </div>
                                             <div className="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>

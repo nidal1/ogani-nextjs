@@ -23,7 +23,7 @@ const Header = ({value="customAlt"}) => {
                                         <a href="#"><i className="fa fa-pinterest-p" /></a>
                                     </div>
                                     <div className="header__top__right__language">
-                                        <img src="./img/language.png" alt={value.toString()}/>
+                                        <img src="/img/language.png" alt={value.toString()}/>
                                         <div>English</div>
                                         <span className="arrow_carrot-down" />
                                         <ul>
@@ -43,7 +43,7 @@ const Header = ({value="customAlt"}) => {
                     <div className="row">
                         <div className="col-lg-3">
                             <div className="header__logo">
-                                <a href="./index.html"><img src="./img/logo.png" alt={value.toString()}/></a>
+                                <a href="./index.html"><img src="/img/logo.png" alt={value.toString()}/></a>
                             </div>
                         </div>
                         <div className="col-lg-6">

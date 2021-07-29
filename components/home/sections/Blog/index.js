@@ -15,7 +15,7 @@ const Blog = ({value="customAlt"}) => {
                         <div className="col-lg-4 col-md-4 col-sm-6">
                             <div className="blog__item">
                                 <div className="blog__item__pic">
-                                    <img src="img/blog/blog-1.jpg" alt={value.toString()} />
+                                    <img src="/img/blog/blog-1.jpg" alt={value.toString()} />
                                 </div>
                                 <div className="blog__item__text">
                                     <ul>
@@ -30,7 +30,7 @@ const Blog = ({value="customAlt"}) => {
                         <div className="col-lg-4 col-md-4 col-sm-6">
                             <div className="blog__item">
                                 <div className="blog__item__pic">
-                                    <img src="img/blog/blog-2.jpg" alt={value.toString()} />
+                                    <img src="/img/blog/blog-2.jpg" alt={value.toString()} />
                                 </div>
                                 <div className="blog__item__text">
                                     <ul>
@@ -45,7 +45,7 @@ const Blog = ({value="customAlt"}) => {
                         <div className="col-lg-4 col-md-4 col-sm-6">
                             <div className="blog__item">
                                 <div className="blog__item__pic">
-                                    <img src="img/blog/blog-3.jpg" alt={value.toString()} />
+                                    <img src="/img/blog/blog-3.jpg" alt={value.toString()} />
                                 </div>
                                 <div className="blog__item__text">
                                     <ul>
