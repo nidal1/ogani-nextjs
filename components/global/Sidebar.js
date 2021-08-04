@@ -1,3 +1,5 @@
+import withBaseHeader from "./withBaseHeader";
+
 const Sidebar = ({value="customAlt"}) => {
     return (
         <>
@@ -63,4 +65,4 @@ const Sidebar = ({value="customAlt"}) => {
         </>
     );
 };
-export default Sidebar;
+export default withBaseHeader(Sidebar);

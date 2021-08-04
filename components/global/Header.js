@@ -1,4 +1,54 @@
-const Header = ({value="customAlt"}) => {
+import Link from 'next/link';
+import { useRouter } from 'next/dist/client/router';
+import withBaseheader from "./withBaseHeader";
+
+const CustomLink = ({ itemName, id, href }) => {
+    const router = useRouter();
+    let activeClass = router.asPath === href ? 'active' : '';
+    return (
+        <li key={ id } className={ activeClass } >
+            <Link href={ href }>
+                { itemName }
+            </Link>
+        </li>
+    )
+
+}
+
+const Header = ({ value = "customAlt", topHeaderInfo, navigation }, ...props) => {
+
+    const {
+        email,
+        amountOfFreeShippingOrders,
+        socialMedias
+    } = topHeaderInfo;
+
+    const smLinks = socialMedias.map((cur) => {
+        return <a key={cur.sosialMediaName} href={cur.socialMediaLink}><i className={cur.socialMediaFont} /></a>
+    });
+
+
+    const navigationLinks = navigation.navItems.map((cur) => {
+        return <CustomLink id={cur.navIteam} href={cur.navLink} itemName = {cur.navIteam}/>
+    });
+    const addItemTo = (event) => {
+        console.log(event)
+    }
+
+    const items = (
+        <div className="popover" role="tooltip">
+            <div className="popover-body" >
+                <div className="dropdown-menu">
+                    <a className="dropdown-item" href="#">Action</a>
+                    <a className="dropdown-item" href="#">Another action</a>
+                    <a className="dropdown-item" href="#">Something else here</a>
+                    <div className="dropdown-divider" />
+                    <a className="dropdown-item" href="#">Separated link</a>
+                </div>
+            </div>
+        </div>
+    )
+
     return (
         <>
             {/* Header Section Begin */}
@@ -9,30 +59,27 @@ const Header = ({value="customAlt"}) => {
                             <div className="col-lg-6 col-md-6">
                                 <div className="header__top__left">
                                     <ul>
-                                        <li><i className="fa fa-envelope" /> hello@colorlib.com</li>
-                                        <li>Free Shipping for all Order of $99</li>
+                                        <li><i className="fa fa-envelope" /> {email}</li>
+                                        <li>Free Shipping for all Order of ${amountOfFreeShippingOrders}</li>
                                     </ul>
                                 </div>
                             </div>
                             <div className="col-lg-6 col-md-6">
                                 <div className="header__top__right">
                                     <div className="header__top__right__social">
-                                        <a href="#"><i className="fa fa-facebook" /></a>
-                                        <a href="#"><i className="fa fa-twitter" /></a>
-                                        <a href="#"><i className="fa fa-linkedin" /></a>
-                                        <a href="#"><i className="fa fa-pinterest-p" /></a>
+                                        {smLinks}
                                     </div>
                                     <div className="header__top__right__language">
-                                        <img src="/img/language.png" alt={value.toString()}/>
+                                        <img src="/img/language.png" alt={value.toString()} />
                                         <div>English</div>
                                         <span className="arrow_carrot-down" />
                                         <ul>
-                                            <li><a href="#">Spanis</a></li>
-                                            <li><a href="#">English</a></li>
+                                            <li><Link href="#"><>Spanis</></Link></li>
+                                            <li><Link href="#"><>English</></Link></li>
                                         </ul>
                                     </div>
                                     <div className="header__top__right__auth">
-                                        <a href="#"><i className="fa fa-user" /> Login</a>
+                                        <Link href="#"><><i className="fa fa-user" /> Login</></Link>
                                     </div>
                                 </div>
                             </div>
@@ -43,32 +90,21 @@ const Header = ({value="customAlt"}) => {
                     <div className="row">
                         <div className="col-lg-3">
                             <div className="header__logo">
-                                <a href="./index.html"><img src="/img/logo.png" alt={value.toString()}/></a>
+                                <Link href="/"><img src="/img/logo.png" alt={value.toString()} /></Link>
                             </div>
                         </div>
                         <div className="col-lg-6">
                             <nav className="header__menu">
                                 <ul>
-                                    <li className="active"><a href="./index.html">Home</a></li>
-                                    <li><a href="./shop-grid.html">Shop</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul className="header__menu__dropdown">
-                                            <li><a href="./shop-details.html">Shop Details</a></li>
-                                            <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                            <li><a href="./checkout.html">Check Out</a></li>
-                                            <li><a href="./blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="./blog.html">Blog</a></li>
-                                    <li><a href="./contact.html">Contact</a></li>
+                                    {navigationLinks}
                                 </ul>
                             </nav>
                         </div>
                         <div className="col-lg-3">
                             <div className="header__cart">
                                 <ul>
-                                    <li><a href="#"><i className="fa fa-heart" /> <span>1</span></a></li>
-                                    <li><a href="#"><i className="fa fa-shopping-bag" /> <span>3</span></a></li>
+                                    <li type="button" data-role="favorite-items-btn" onClick={addItemTo}><i className="fa fa-heart" /> <span>1</span></li>
+                                    <li><i className="fa fa-shopping-bag" type="button" data-role="add-to-cart-btn" /> <span>3</span></li>
                                 </ul>
                                 <div className="header__cart__price">item: <span>$150.00</span></div>
                             </div>
@@ -83,4 +119,5 @@ const Header = ({value="customAlt"}) => {
         </>
     );
 };
-export default Header;
+
+export default withBaseheader(Header);
