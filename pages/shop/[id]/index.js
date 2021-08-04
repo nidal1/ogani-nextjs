@@ -1,4 +1,4 @@
-import Base from '../../../components/global/Base
+import Base from '../../../components/global/Base';
 
 import { useRouter } from "next/dist/client/router";
 

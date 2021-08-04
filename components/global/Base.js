@@ -2,12 +2,12 @@
 import Sidebar from './Sidebar';
 import Header from './Header'
 
-const Base = ({ Children }) => {
+const Base = ({ children }) => {
     return (
         <>
             <Sidebar />
             <Header />
-            {Children}
+            {children}
         </>
     );
 };

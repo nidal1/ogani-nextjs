@@ -1,4 +1,4 @@
-import Base from '../../components/global/Base;
+import Base from '../../components/global/Base';
 
 export default function Contact(params) {
     return (
