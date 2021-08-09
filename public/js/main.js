@@ -24,7 +24,7 @@
         $('[data-toggle="popover"]').popover();
 
         $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow");
+        $("#preloder").delay(0).fadeOut("slow");
 
         /*------------------
             Gallery filter

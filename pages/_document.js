@@ -19,7 +19,7 @@ class MyDocument extends Document {
                     <MainLinks />
                 </Head>
                 <body>
-                    <PreLoader />
+                    {/* <PreLoader /> */}
                     <Main />
                     <Footer />
                     <MainScripts />

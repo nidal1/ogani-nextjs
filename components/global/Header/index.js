@@ -1,14 +1,17 @@
 import Link from 'next/link';
+import React, { useState } from 'react';
 import { useRouter } from 'next/dist/client/router';
-import withBaseheader from "./withBaseHeader";
+import withBaseheader from "../../global/withBaseHeader";
+import DropDown from './Dropdown';
+import DropDownItem from './Dropdown/DropdownItem';
 
-const CustomLink = ({ itemName, id, href }) => {
+const CustomLink = ({ itemName, href }) => {
     const router = useRouter();
     let activeClass = router.asPath === href ? 'active' : '';
     return (
-        <li key={ id } className={ activeClass } >
-            <Link href={ href }>
-                { itemName }
+        <li className={activeClass} >
+            <Link href={href}>
+                {itemName}
             </Link>
         </li>
     )
@@ -23,31 +26,42 @@ const Header = ({ value = "customAlt", topHeaderInfo, navigation }, ...props) =>
         socialMedias
     } = topHeaderInfo;
 
+    const {
+        favoritItems,
+        cartIteams,
+        total
+    } = navigation
+
+    const [targetName, setTarget] = useState(undefined);
+
+
     const smLinks = socialMedias.map((cur) => {
         return <a key={cur.sosialMediaName} href={cur.socialMediaLink}><i className={cur.socialMediaFont} /></a>
     });
 
 
     const navigationLinks = navigation.navItems.map((cur) => {
-        return <CustomLink id={cur.navIteam} href={cur.navLink} itemName = {cur.navIteam}/>
+        return <CustomLink key={cur.navIteam} href={cur.navLink} itemName={cur.navIteam} />
     });
-    const addItemTo = (event) => {
-        console.log(event)
+
+
+    const onEnterHeaderCart = (e) => {
+        let dataAtt;
+        if (e.target.tagName === "LI") {
+            dataAtt = e.target.attributes.getNamedItem('data-name').value;
+        }
+        if (e.target !== e.currentTarget) {
+            dataAtt = e.target.offsetParent.attributes.getNamedItem('data-name').value;
+        }
+        if (!targetName) {
+            setTarget(dataAtt);
+        }
     }
 
-    const items = (
-        <div className="popover" role="tooltip">
-            <div className="popover-body" >
-                <div className="dropdown-menu">
-                    <a className="dropdown-item" href="#">Action</a>
-                    <a className="dropdown-item" href="#">Another action</a>
-                    <a className="dropdown-item" href="#">Something else here</a>
-                    <div className="dropdown-divider" />
-                    <a className="dropdown-item" href="#">Separated link</a>
-                </div>
-            </div>
-        </div>
-    )
+    const onLeaveHeaderCart = (e) => {
+        if (targetName) setTarget(undefined);
+    }
+
 
     return (
         <>
@@ -102,11 +116,28 @@ const Header = ({ value = "customAlt", topHeaderInfo, navigation }, ...props) =>
                         </div>
                         <div className="col-lg-3">
                             <div className="header__cart">
-                                <ul>
-                                    <li type="button" data-role="favorite-items-btn" onClick={addItemTo}><i className="fa fa-heart" /> <span>1</span></li>
-                                    <li><i className="fa fa-shopping-bag" type="button" data-role="add-to-cart-btn" /> <span>3</span></li>
+                                <ul className="dropdown">
+
+                                    <li type="button" data-name="favorite-items-btn" onMouseEnter={onEnterHeaderCart} onMouseLeave={onLeaveHeaderCart}><i className="fa fa-heart" />
+                                        <span>{favoritItems}</span>
+
+                                        {targetName === "favorite-items-btn" && <DropDown>
+                                            <DropDownItem />
+                                            <DropDownItem />
+                                            <DropDownItem />
+                                        </DropDown>}
+                                    </li>
+
+                                    <li type="button" data-name="add-to-cart-btn" onMouseEnter={onEnterHeaderCart} onMouseLeave={onLeaveHeaderCart}>
+                                        <i className="fa fa-shopping-bag" /> <span>{cartIteams}</span>
+                                        {targetName === "add-to-cart-btn" && <DropDown>
+                                            <DropDownItem />
+                                            <DropDownItem />
+                                            <DropDownItem />
+                                        </DropDown>}
+                                    </li>
                                 </ul>
-                                <div className="header__cart__price">item: <span>$150.00</span></div>
+                                <div className="header__cart__price">item: <span>${total}</span></div>
                             </div>
                         </div>
                     </div>
