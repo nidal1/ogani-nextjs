@@ -1,8 +1,8 @@
-const DropDown = ({ children }) => {
+const DropDown = ({ children, width }) => {
     return (
 
         <div className="list-group" id="list-tab" role="tablist" style={{
-            width: '400px',
+            width: width,
             right: '0',
             top: '100%',
             position: 'absolute',

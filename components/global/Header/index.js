@@ -121,7 +121,7 @@ const Header = ({ value = "customAlt", topHeaderInfo, navigation }, ...props) =>
                                     <li type="button" data-name="favorite-items-btn" onMouseEnter={onEnterHeaderCart} onMouseLeave={onLeaveHeaderCart}><i className="fa fa-heart" />
                                         <span>{favoritItems}</span>
 
-                                        {targetName === "favorite-items-btn" && <DropDown>
+                                        {targetName === "favorite-items-btn" && <DropDown width={"400px"}>
                                             <DropDownItem />
                                             <DropDownItem />
                                             <DropDownItem />
@@ -130,7 +130,7 @@ const Header = ({ value = "customAlt", topHeaderInfo, navigation }, ...props) =>
 
                                     <li type="button" data-name="add-to-cart-btn" onMouseEnter={onEnterHeaderCart} onMouseLeave={onLeaveHeaderCart}>
                                         <i className="fa fa-shopping-bag" /> <span>{cartIteams}</span>
-                                        {targetName === "add-to-cart-btn" && <DropDown>
+                                        {targetName === "add-to-cart-btn" && <DropDown width={"400px"}>
                                             <DropDownItem />
                                             <DropDownItem />
                                             <DropDownItem />
