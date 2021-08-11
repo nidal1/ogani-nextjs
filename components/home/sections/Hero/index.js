@@ -19,7 +19,7 @@ const Hero = ({numberPhone="+65 11.188.888"}) => {
                                         <button type="submit" className="site-btn">SEARCH</button>
                                     </form>
                                     <DropDown width="100%">
-                                        <a lassName="list-group-item list-group-item-action media" id="list-home-list" data-toggle="list" role="tab" href="#">
+                                        <a className="list-group-item list-group-item-action media" id="list-home-list" data-toggle="list" role="tab" href="#">
                                             Home
                                         </a>
                                     </DropDown>
