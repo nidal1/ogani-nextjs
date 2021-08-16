@@ -1,4 +1,4 @@
-import { capitalizeAndRemoveUnderscores } from "../../../../../util";
+import { capitalizeAndRemoveUnderscores } from "../../../util";
 
 const calcDsicount = (price, discount) => {
     discount = discount / 100;

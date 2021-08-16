@@ -1,5 +1,5 @@
-import FeaturedControls from "./FeaturedControls"
-import FeaturedItem from "./FeaturedItem"
+import FeaturedControls from "./FeaturedControls";
+import FeaturedItem from "../../../global/FeaturedItem";
 
 const Featured = (params) => {
     return (
