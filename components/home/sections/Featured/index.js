@@ -16,10 +16,10 @@ const Featured = (params) => {
                         </div>
                     </div>
                     <div className="row featured__filter">
-                        <FeaturedItem />
-                        <FeaturedItem />
-                        <FeaturedItem />
-                        <FeaturedItem />
+                        <FeaturedItem filtredComponents ={false}/>
+                        <FeaturedItem filtredComponents/>
+                        <FeaturedItem filtredComponents/>
+                        <FeaturedItem filtredComponents/>
                     </div>
                 </div>
             </section>
