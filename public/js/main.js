@@ -14,15 +14,18 @@
 
 
 
-    /*------------------
-        Preloader
-    --------------------*/
+
     $(window).on('load', function () {
         /*------------------
-        Popper
-    --------------------*/
+            Popper
+        --------------------*/
         $('[data-toggle="popover"]').popover();
 
+        
+        /*------------------
+        Preloader
+        --------------------*/
+        
         $(".loader").fadeOut();
         $("#preloder").delay(0).fadeOut("slow");
 

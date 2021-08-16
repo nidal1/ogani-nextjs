@@ -1,5 +1,5 @@
 import DropDown from "../../../global/Header/Dropdown";
-import HeroCategories from "./HeroCategories"
+import HeroCategories from "../../../global/HeroCategories"
 
 const Hero = ({numberPhone="+65 11.188.888"}) => {
     return (
@@ -9,7 +9,7 @@ const Hero = ({numberPhone="+65 11.188.888"}) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3">
-                            <HeroCategories />
+                            <HeroCategories defaultDisplay/>
                         </div>
                         <div className="col-lg-9">
                             <div className="hero__search">
