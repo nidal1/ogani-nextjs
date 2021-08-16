@@ -1,19 +1,9 @@
-const makeFeaturedCategoriesControlsTitle = (fcct) => {
-    // Upercase
-    fcct = fcct.toString().charAt(0).toUpperCase() + fcct.slice(1);
-    //Sreach if it have an -
-    if (fcct.search('-') !== -1) {
-        // Replace - with ' ' 
-        return fcct.replace(/-/g, ' ');
-    }
-    // Return the value
-    return fcct;
-}
+import { capitalizeAndRemoveUnderscores } from "../../../../../util";
 
 const FeaturedControls = ({featuredCategories=['oranges','fresh-meat','vegetables','fast-food',]}) => {
 
     const fc = featuredCategories.map((cur,i) => {
-        const fcct = makeFeaturedCategoriesControlsTitle(cur);
+        const fcct = capitalizeAndRemoveUnderscores(cur);
         return <li key={i} data-filter={`.${cur}`}>{fcct}</li>;
     });
     
