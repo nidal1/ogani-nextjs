@@ -7,5 +7,10 @@ export const capitalizeAndRemoveUnderscores = (word) => {
         return word.replace(/-/g, ' ');
     }
     // Return the value
+}
+
+export const capitalizeAndRemoveForwardslash = (word) => {
+    word = word.slice(1);
+    word = word.charAt(0).toUpperCase() + word.slice(1);
     return word;
 }

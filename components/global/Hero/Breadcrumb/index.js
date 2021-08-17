@@ -1,4 +1,13 @@
+import Link from "next/dist/client/link";
+
+import { capitalizeAndRemoveForwardslash } from '../../../../util';
+
+import { useRouter } from "next/dist/client/router";
+
 const Breadcrumb = (params) => {
+    let pathname = useRouter().pathname;
+    pathname = capitalizeAndRemoveForwardslash(pathname);
+
     return (
         <section className="breadcrumb-section set-bg" data-setbg="./img/breadcrumb.jpg" >
             <div className="container">
@@ -7,8 +16,8 @@ const Breadcrumb = (params) => {
                         <div className="breadcrumb__text">
                             <h2>Organi Shop</h2>
                             <div className="breadcrumb__option">
-                                <a href="./index.html">Home</a>
-                                <span>Shop</span>
+                                <Link href="/">Home</Link>
+                                <span>{ pathname }</span>
                             </div>
                         </div>
                     </div>
