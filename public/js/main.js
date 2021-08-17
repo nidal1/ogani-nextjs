@@ -42,14 +42,6 @@
         }
     });
 
-    /*------------------
-        Background Set
-    --------------------*/
-    $('.set-bg').each(function () {
-        var bg = $(this).data('setbg');
-        $(this).css('background-image', 'url(' + bg + ')');
-    });
-
     //Humberger Menu
     $(".humberger__open").on('click', function () {
         $(".humberger__menu__wrapper").addClass("show__humberger__menu__wrapper");
@@ -77,36 +69,7 @@
     });
 
 
-    /*-----------------------------
-        Product Discount Slider
-    -------------------------------*/
-    $(".product__discount__slider").owlCarousel({
-        loop: true,
-        margin: 0,
-        items: 3,
-        dots: true,
-        smartSpeed: 1200,
-        autoHeight: false,
-        autoplay: true,
-        responsive: {
-
-            320: {
-                items: 1,
-            },
-
-            480: {
-                items: 2,
-            },
-
-            768: {
-                items: 2,
-            },
-
-            992: {
-                items: 3,
-            }
-        }
-    });
+    
 
     /*---------------------------------
         Product Details Pic Slider
@@ -120,32 +83,6 @@
         autoHeight: false,
         autoplay: true
     });
-
-    /*-----------------------
-        Price Range Slider
-    ------------------------ */
-    var rangeSlider = $(".price-range"),
-        minamount = $("#minamount"),
-        maxamount = $("#maxamount"),
-        minPrice = rangeSlider.data('min'),
-        maxPrice = rangeSlider.data('max');
-    rangeSlider.slider({
-        range: true,
-        min: minPrice,
-        max: maxPrice,
-        values: [minPrice, maxPrice],
-        slide: function (event, ui) {
-            minamount.val('$' + ui.values[0]);
-            maxamount.val('$' + ui.values[1]);
-        }
-    });
-    minamount.val('$' + rangeSlider.slider("values", 0));
-    maxamount.val('$' + rangeSlider.slider("values", 1));
-
-    /*--------------------------
-        Select
-    ----------------------------*/
-    $("select").niceSelect();
 
     /*------------------
         Single Product

@@ -1,15 +1,21 @@
-import DropDown from "../../../global/Header/Dropdown";
-import HeroCategories from "../../../global/HeroCategories"
+import DropDown from "../Header/Dropdown";
+import HeroCategories from "../HeroCategories"
+import HeroItem from "./HeroItem";
+
+import { useRouter } from "next/dist/client/router";
 
 const Hero = ({numberPhone="+65 11.188.888"}) => {
+    
+    const pathname = useRouter().pathname;
+
     return (
         <>
             {/* Hero Section Begin */}
-            <section className="hero">
+            <section className={`hero ${pathname !== '/' && 'hero-normal'}` }>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3">
-                            <HeroCategories defaultDisplay/>
+                            <HeroCategories defaultDisplay={pathname === '/' && true}/>
                         </div>
                         <div className="col-lg-9">
                             <div className="hero__search">
@@ -36,14 +42,7 @@ const Hero = ({numberPhone="+65 11.188.888"}) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="hero__item set-bg" data-setbg="/img/hero/banner.jpg">
-                                <div className="hero__text">
-                                    <span>FRUIT FRESH</span>
-                                    <h2>Vegetable <br />100% Organic</h2>
-                                    <p>Free Pickup and Delivery Available</p>
-                                    <a href="#" className="primary-btn">SHOP NOW</a>
-                                </div>
-                            </div>
+                            {pathname === '/' && <HeroItem />}
                         </div>
                     </div>
                 </div>
