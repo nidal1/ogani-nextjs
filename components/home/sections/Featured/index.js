@@ -16,10 +16,34 @@ const Featured = (params) => {
                         </div>
                     </div>
                     <div className="row featured__filter">
-                        <FeaturedItem filtredComponents ={false}/>
-                        <FeaturedItem filtredComponents/>
-                        <FeaturedItem filtredComponents/>
-                        <FeaturedItem filtredComponents/>
+                        <FeaturedItem filtredComponents ={false} responsive={
+                            {
+                                lg:3,
+                                md:4,
+                                sm:6
+                            }
+                        }/>
+                        <FeaturedItem filtredComponents responsive={
+                            {
+                                lg:3,
+                                md:4,
+                                sm:6
+                            }
+                        }/>
+                        <FeaturedItem filtredComponents responsive={
+                            {
+                                lg:3,
+                                md:4,
+                                sm:6
+                            }
+                        }/>
+                        <FeaturedItem filtredComponents responsive={
+                            {
+                                lg:3,
+                                md:4,
+                                sm:6
+                            }
+                        }/>
                     </div>
                 </div>
             </section>

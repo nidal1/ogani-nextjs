@@ -59,16 +59,16 @@ export default function Shop({ value = "customAlt" }) {
                                 </div>
                                 <div className="row">
                                     <OwlCarousel 
-                                    elementByClassName='product__discount__slider'
-                                    loop={1}
-                                    items={3}
-                                    dots={true}
-                                    responsive={{
-                                        320:1,
-                                        480:2,
-                                        768:2,
-                                        992:3
-                                    }}>
+                                        elementByClassName='product__discount__slider'
+                                        loop={1}
+                                        items={3}
+                                        dots={true}
+                                        responsive={{
+                                            320:1,
+                                            480:2,
+                                            768:2,
+                                            992:3
+                                        }}>
                                         <div className="col-lg-4">
                                             <div className="product__discount__item">
                                                 <div className="product__discount__item__pic set-bg" data-setbg="/img/product/discount/pd-1.jpg">

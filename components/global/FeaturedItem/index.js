@@ -5,13 +5,30 @@ const calcDsicount = (price, discount) => {
     return price - (price * discount)
 }
 
-const FeaturedItem = ({ filtredComponents = true, category = 'dried-fruit', bgImg = 'feature-1', discount = 0, heading = 'Raisin’n’nuts', price = 100, showCategory = true }) => {
+const makeResponsiveness = (obj) => {
+    let responsive = '';
+    for (const key in obj) {
+        if (Object.hasOwnProperty.call(obj, key)) {
+            const element = obj[key];
+            if (element && element <= 12 && element > 0) {
+                responsive = responsive + `col-${key}-${element} `;
+            }
+        }
+    }
+    return responsive;
+}
+
+const FeaturedItem = ({ filtredComponents = true, category = 'dried-fruit', bgImg = 'feature-1', discount = 0, heading = 'Raisin’n’nuts', price = 100, showCategory = true, responsive = {
+    lg:undefined,
+    md:undefined,
+    sm:undefined,
+}}) => {
 
     const adjustCategory = capitalizeAndRemoveUnderscores(category);
-
+    const responsiveness = makeResponsiveness(responsive);
 
     return (
-        <div className={`col-lg-3 col-md-4 col-sm-6 mix ${filtredComponents && category}`}>
+        <div className={`${responsiveness} mix ${filtredComponents && category}`}>
 
             <div className="product__discount__item">
                 <div className="product__discount__item__pic set-bg" data-setbg={`/img/featured/${bgImg}.jpg`}>
