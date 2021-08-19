@@ -22,3 +22,7 @@
 .header__cart .dropdown li .list-group .list-group-item span{
     position: relative;
 }
+
+.price-range-wrap .range-slider .price-input input{
+    max-width: 33%;
+}
