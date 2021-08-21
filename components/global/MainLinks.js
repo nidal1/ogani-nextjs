@@ -18,7 +18,6 @@ const MainLinks = (params) => {
             <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css" />
             <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css" />
             <link rel="stylesheet" href="/css/style.css" type="text/css" />
-            <link rel="stylesheet" href="/css/custom-css.css" type="text/css" />
         </>
     );
 };

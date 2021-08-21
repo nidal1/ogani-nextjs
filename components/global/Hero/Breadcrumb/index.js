@@ -1,15 +1,25 @@
 import Link from "next/dist/client/link";
 
+
 import { capitalizeAndRemoveForwardslash } from '../../../../util';
 
 import { useRouter } from "next/dist/client/router";
+import { useEffect } from "react";
 
 const Breadcrumb = (params) => {
     let pathname = useRouter().pathname;
     pathname = capitalizeAndRemoveForwardslash(pathname);
-
+    useEffect(() => {
+        /*------------------
+            Background Set
+        --------------------*/
+        $('.set-bg').each(function () {
+          var bg = $(this).data('setbg');
+          $(this).css('background-image', 'url(' + bg + ')');
+        });
+      });
     return (
-        <section className="breadcrumb-section set-bg" data-setbg="./img/breadcrumb.jpg" >
+        <section className="breadcrumb-section set-bg" data-setbg="/img/breadcrumb.jpg" >
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12 text-center">

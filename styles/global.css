@@ -1,0 +1,32 @@
+.mt-50{
+    margin-top: 50px !important;
+}
+
+.header__cart .dropdown li span{
+    line-height: 11px !important;
+}
+
+.header__cart .dropdown li .list-group .list-group-item.active {
+    background-color: #7fad39;
+}
+
+.header__cart .dropdown li .list-group .list-group-item:first-child {
+    border-radius: 0;
+}
+
+.header__cart .dropdown li .list-group .list-group-item:last-child {
+    border-radius: 0;
+}
+
+.header__cart .dropdown li .list-group .list-group-item {
+    display: flex !important;
+    align-items: center;
+}
+
+.header__cart .dropdown li .list-group .list-group-item span{
+    position: relative;
+}
+
+.price-range-wrap .range-slider .price-input input{
+    max-width: 33%;
+}

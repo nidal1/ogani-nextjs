@@ -1,4 +1,4 @@
-import { capitalize } from "../../../../../util";
+import { capitalize } from "../../../../../../util";
 
 
 const PopularSize = ({ label }) => {
