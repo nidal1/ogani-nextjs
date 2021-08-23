@@ -1,22 +1,6 @@
-import { useEffect, useState } from "react";
+import ProduitQuantity from "../../../global/ProduitQuantity";
 
 const ProductDetailsText = ({ heading = 'Vetgetable’s Package', stars = '3.5', reviews = '18', price = '50', description = "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.", availability = true, shippingDay = '1', weight = '1.2' }) => {
-
-    const [inputVal, setinputVal] = useState(1);
-
-    const handelleInc = (e) => {
-        const newValue = inputVal + 1;
-        setinputVal(newValue)
-    }
-
-    const handelleDec = (e) => {
-        const newValue = inputVal - 1;
-        setinputVal(newValue)
-    }
-
-    const handelleChange = (e) => {
-        setinputVal(e.target.value)
-    }
 
     const starsElements = (() => {
         let starsArr = [];
@@ -50,11 +34,7 @@ const ProductDetailsText = ({ heading = 'Vetgetable’s Package', stars = '3.5',
                 <p>{description}</p>
                 <div className="product__details__quantity">
                     <div className="quantity">
-                        <div className="pro-qty">
-                            <span className="dec qtybtn" onClick={ handelleDec }>-</span>
-                            <input type="text" defaultValue={1} value={inputVal} onChange={handelleChange}/>
-                            <span className="inc qtybtn" onClick={ handelleInc}>+</span>
-                        </div>
+                        <ProduitQuantity />
                     </div>
                 </div>
                 <a href="#" className="primary-btn">ADD TO CARD</a>
