@@ -2,6 +2,14 @@
     margin-top: 50px !important;
 }
 
+.mb-0{
+    margin-top: 0px !important;
+}
+
+.bt-none{
+    border-top: none !important;
+}
+
 .header__cart .dropdown li span{
     line-height: 11px !important;
 }
