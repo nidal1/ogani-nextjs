@@ -5,17 +5,31 @@ import Featured from "../components/home/sections/Featured";
 import LatestProduct from "../components/global/LatestProduct";
 import Base from '../components/global/Base';
 
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { addCatoriezedItems } from "../features/products/productsSlice";
 
-export default function Home() {
-  
+
+function Home() {
+
+  const products = useSelector(state => state.products);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const categoriezedItems = products.items?.filter((el) => {
+      return el.isCatoriezed;
+    });
+    dispatch(addCatoriezedItems(categoriezedItems));
+  },[products.items]);
 
   return (
-    <Base>
+    <>
       <Categories />
       <Featured />
       <Banner />
       <LatestProduct />
       <Blog />
-    </Base>
+    </>
   )
 }
+
+export default Base(Home);

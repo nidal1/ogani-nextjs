@@ -1,6 +1,5 @@
 import Base from '../../components/global/Base';
 import { useEffect } from 'react';
-import FeaturedItem from '../../components/global/FeaturedItem';
 import ShopSidebar from '../../components/shop/sections/ShopSidebar';
 import ShopProductDsicount from '../../components/shop/sections/ShopProductDsicount';
 import FilterItems from '../../components/shop/sections/FilterItems';

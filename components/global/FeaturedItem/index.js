@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { capitalizeAndRemoveUnderscores } from "../../../util";
 
 const calcDsicount = (price, discount) => {
@@ -19,11 +20,16 @@ const makeResponsiveness = (obj) => {
 }
 
 const FeaturedItem = ({ filtredComponents = true, category = 'dried-fruit', bgImg = 'feature-1', discount = 0, heading = 'Raisin’n’nuts', price = 100, showCategory = true, responsive = {
-    lg:undefined,
-    md:undefined,
-    sm:undefined,
-}}) => {
-
+    lg: undefined,
+    md: undefined,
+    sm: undefined,
+} }) => {
+    useEffect(() => {
+        $('.set-bg').each(function () {
+            var bg = $(this).data('setbg');
+            $(this).css('background-image', 'url(' + bg + ')');
+        });
+    }, []);
     const adjustCategory = capitalizeAndRemoveUnderscores(category);
     const responsiveness = makeResponsiveness(responsive);
 
@@ -32,7 +38,7 @@ const FeaturedItem = ({ filtredComponents = true, category = 'dried-fruit', bgIm
 
             <div className="product__discount__item">
                 <div className="product__discount__item__pic set-bg" data-setbg={`/img/featured/${bgImg}.jpg`}>
-                    { discount > 0 && <div className="product__discount__percent">-{ discount }%</div>}
+                    {discount > 0 && <div className="product__discount__percent">-{discount}%</div>}
                     <ul className="product__item__pic__hover">
                         <li><a href="#"><i className="fa fa-heart" /></a></li>
                         <li><a href="#"><i className="fa fa-retweet" /></a></li>
@@ -40,9 +46,9 @@ const FeaturedItem = ({ filtredComponents = true, category = 'dried-fruit', bgIm
                     </ul>
                 </div>
                 <div className="product__discount__item__text">
-                    {showCategory && <span>{ adjustCategory }</span>}
-                    <h5><a href="#">{ heading }</a></h5>
-                    { discount > 0 ? <div className="product__item__price">${calcDsicount(price, discount)}<span>${ price }</span></div> : <div className="product__item__price">${ price }</div>}
+                    {showCategory && <span>{adjustCategory}</span>}
+                    <h5><a href="#">{heading}</a></h5>
+                    {discount > 0 ? <div className="product__item__price">${calcDsicount(price, discount)}<span>${price}</span></div> : <div className="product__item__price">${price}</div>}
                 </div>
             </div>
 

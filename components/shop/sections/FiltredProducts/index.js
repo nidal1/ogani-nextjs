@@ -1,6 +1,7 @@
 import FeaturedItem from "../../../global/FeaturedItem";
-
+import { useSelector, useDispatch } from "react-redux";
 const FiltredProducts = (params) => {
+
     return (
         <div className="row">
             <FeaturedItem
