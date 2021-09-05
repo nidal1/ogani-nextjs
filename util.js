@@ -11,6 +11,7 @@ export const capitalizeAndRemoveUnderscores = (word) => {
         return word.replace(/-/g, ' ');
     }
     // Return the value
+    return word;
 }
 
 export const capitalizeAndRemoveForwardslash = (word) => {

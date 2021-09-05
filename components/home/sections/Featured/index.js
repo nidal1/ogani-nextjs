@@ -1,7 +1,32 @@
 import FeaturedControls from "./FeaturedControls";
 import FeaturedItem from "../../../global/FeaturedItem";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const Featured = (params) => {
+    const products = useSelector(state => state.products);
+    const { filtredItems } = products;
+
+    const items = filtredItems.map((el) => {
+        return (
+            <FeaturedItem 
+            key={el.productId}
+            filtredComponents 
+            category = {el.category}
+            bgImg = {el.productImg}
+            heading = {el.heading}
+            price = {el.price}
+            discount = {el.discount}
+            responsive={
+                {
+                    lg: 3,
+                    md: 4,
+                    sm: 6
+                }
+            
+            } />
+        );
+    })
     return (
         <>
             {/* Featured Section Begin */}
@@ -12,38 +37,11 @@ const Featured = (params) => {
                             <div className="section-title">
                                 <h2>Featured Product</h2>
                             </div>
-                            <FeaturedControls />
+                            <FeaturedControls featuredCategories={products.categories} />
                         </div>
                     </div>
                     <div className="row featured__filter">
-                        <FeaturedItem filtredComponents ={false} responsive={
-                            {
-                                lg:3,
-                                md:4,
-                                sm:6
-                            }
-                        }/>
-                        <FeaturedItem filtredComponents responsive={
-                            {
-                                lg:3,
-                                md:4,
-                                sm:6
-                            }
-                        }/>
-                        <FeaturedItem filtredComponents responsive={
-                            {
-                                lg:3,
-                                md:4,
-                                sm:6
-                            }
-                        }/>
-                        <FeaturedItem filtredComponents responsive={
-                            {
-                                lg:3,
-                                md:4,
-                                sm:6
-                            }
-                        }/>
+                        { items }
                     </div>
                 </div>
             </section>

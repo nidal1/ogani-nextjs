@@ -5,20 +5,21 @@ import Breadcrumb from './Hero/Breadcrumb';
 
 import { useRouter } from 'next/dist/client/router';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from "react-redux";
-import { addProducts } from '../../features/products/productsSlice';
+import { useDispatch } from "react-redux";
+import { addProducts, addCategories, addBanners } from '../../features/products/productsSlice';
 
 
 
 const Base = (Component) => {
     return ({ data }) => {
         const pathname = useRouter().pathname;
-        const products = useSelector(state => state);
         const dispatch = useDispatch();
         
         useEffect(() => {
-            dispatch(addProducts(data));
-        })
+            dispatch(addProducts(data.products));
+            dispatch(addCategories(data.categories));
+            dispatch(addBanners(data.banners));
+        },[])
         return (
             <>
                 <Sidebar />

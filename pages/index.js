@@ -7,19 +7,36 @@ import Base from '../components/global/Base';
 
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { addCatoriezedItems } from "../features/products/productsSlice";
+import { addCatoriezedItems, addFiltredItems } from "../features/products/productsSlice";
 
 
 function Home() {
 
+
   const products = useSelector(state => state.products);
   const dispatch = useDispatch();
+
+
   useEffect(() => {
     const categoriezedItems = products.items?.filter((el) => {
       return el.isCatoriezed;
     });
     dispatch(addCatoriezedItems(categoriezedItems));
-  },[products.items]);
+  }, [products.items]);
+
+  useEffect(() => {
+    if(products?.items.length) {
+      const { items } = products;
+      const filtredItems = items.filter((el) => {
+        if (el.isFiltred) {
+          return el;
+        }
+      })
+      dispatch(addFiltredItems(filtredItems));
+    }
+  }, [products.items]);
+
+
 
   return (
     <>
